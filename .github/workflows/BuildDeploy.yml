@@ -1,0 +1,46 @@
+name: hugo publish
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+      with:
+         submodules: recursive
+    
+    - name: checkout latest submodule from remote repository
+      run: git submodule update --remote
+
+    - name: get santa cruze readme
+      run: wget https://raw.githubusercontent.com/microsoft/Project-Santa-Cruz-Preview/main/README.md -O ./content/en/santacruz_readme.md  
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: 'latest'
+        extended: true
+      
+    - name: check hugo version
+      run: hugo version
+          
+    - name: Postcss
+      run: npm install postcss-cli
+      
+    - name: Build
+      run: hugo --minify
+    
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        EXTERNAL_REPOSITORY: lujiansong/lujiansong.github.io
+        PUBLISH_BRANCH: master
+        PUBLISH_DIR: ./public
+      with:
+        emptyCommits: false
+        commitMessage: ${{ github.event.head_commit.message }}

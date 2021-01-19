@@ -2,3 +2,7 @@
 [submodule "themes/docsy"]
 	path = themes/docsy
 	url = https://github.com/google/docsy
+[submodule "MyIASE"]
+	path = MyIASE
+	url = https://github.com/lujiansong/MyIASE.git
+	branch = master
