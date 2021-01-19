@@ -19,6 +19,9 @@ jobs:
     - name: get santa cruze readme
       run: wget https://raw.githubusercontent.com/microsoft/Project-Santa-Cruz-Preview/main/README.md -O ./content/en/santacruz_readme.md  
 
+    - name: Copy public repository docs
+      run: cp -r MyIASE/* content/en
+      
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
