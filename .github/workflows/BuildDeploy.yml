@@ -20,7 +20,7 @@ jobs:
       run: wget https://raw.githubusercontent.com/microsoft/Project-Santa-Cruz-Preview/main/README.md -O ./content/en/santacruz_readme.md  
 
     - name: Copy public repository docs
-      run: cp -r MyIASE/docs content/en/docs
+      run: cp -r MyIASE/docs/* content/en/docs/
       
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
