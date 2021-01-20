@@ -125,7 +125,10 @@ github_project_repo = "https://github.com/lujiansong/MyIASE"
 
 #Jesse: Set this flag to 'true' if you don't want to use 'content/en' as docs root
 github_ignorecontentdir = true
-
+#test
+github_issuefile = "bug_report.md"
+#test
+github_featurefile = "feature_request.md"
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 gcs_engine_id = "011737558837375720776:fsdu1nryfng"
 
