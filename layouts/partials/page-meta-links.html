@@ -28,10 +28,10 @@
     {{ $newPageQS := querify "value" $newPageStub.Content "filename" "change-me.md" | safeURL }}
     {{ $newPageURL := printf "%s/new/%s?%s"  $gh_repo $gh_repo_path $newPageQS }}
     
-	{{ if  $gh_issue }}
+    {{ if  $gh_issue }}
       {{ $issuesURL = printf "%s/issues/new?template=%s" $gh_repo $gh_issue }}
     {{ end }}
-	{{ if  $gh_feature }}
+    {{ if  $gh_feature }}
       {{ $featureURL = printf "%s/issues/new?template=%s" $gh_repo $gh_feature }}
     {{ end }}
 	
