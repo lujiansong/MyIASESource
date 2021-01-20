@@ -1,5 +1,5 @@
 baseURL = "/"
-title = "Goldydocs"
+title = "Program and Community Crew"
 
 enableRobotsTXT = true
 
@@ -53,8 +53,8 @@ id = "UA-00000000-0"
 
 [languages]
 [languages.en]
-title = "Goldydocs"
-description = "A Docsy example site"
+title = "Program and Community Crew"
+description = "A test website built for Program and Community Crew"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
