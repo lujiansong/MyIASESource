@@ -4,7 +4,8 @@ on:
   push:
     branches:
     - master
-
+  repository_dispatch:
+    types: sub_commit
 jobs:
   build-deploy:
     runs-on: ubuntu-18.04
